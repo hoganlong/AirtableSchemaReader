@@ -1,3 +1,5 @@
+_Note this utility is used to feed to an ETL that moves AirTable data into SQL. (In my case Postgresql.)  I'll be making that code public soon.  Contact me if you need it sooner._
+
 # Airtable Schema Reader
 
 A .NET utility that reads and displays the complete schema of an Airtable base, including all tables, fields, and data types.
