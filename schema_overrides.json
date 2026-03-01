@@ -1,0 +1,15 @@
+{
+  "overrides": [
+    {
+      "table": "ARTWORK",
+      "field": "Code (from TYPE)",
+      "action": "exclude"
+    },
+    {
+      "table": "ARTWORK_IMAGE",
+      "field": "URL",
+      "action": "setType",
+      "value": "multilineText"
+    }
+  ]
+}
