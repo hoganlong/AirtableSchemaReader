@@ -6,6 +6,21 @@
       "action": "exclude"
     },
     {
+      "table": "ARTWORK",
+      "field": "BackCount",
+      "action": "exclude"
+    },
+    {
+      "table": "ARTWORK",
+      "field": "FrontCount",
+      "action": "exclude"
+    },
+    {
+      "table": "ARTWORK",
+      "field": "SKETCH",
+      "action": "exclude"
+    },
+    {
       "table": "ARTWORK_IMAGE",
       "field": "URL",
       "action": "setType",
