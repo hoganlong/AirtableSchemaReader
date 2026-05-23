@@ -4,8 +4,41 @@ using System.Text;
 
 class Program
 {
+    static void PrintUsage()
+    {
+        Console.WriteLine("Usage: dotnet run");
+        Console.WriteLine();
+        Console.WriteLine("Reads the Airtable base schema from the metadata API and writes it to");
+        Console.WriteLine("airtable_schema.txt (consumed by AirtableToPostgres). Applies any edits");
+        Console.WriteLine("listed in schema_overrides.json before writing.");
+        Console.WriteLine();
+        Console.WriteLine("Options:");
+        Console.WriteLine("  -h, --help, -?, /?, ?   show this help and exit");
+        Console.WriteLine();
+        Console.WriteLine("Configuration (appsettings.json):");
+        Console.WriteLine("  Airtable:ApiKey         personal access token");
+        Console.WriteLine("  Airtable:BaseId         base to read");
+    }
+
     static async Task Main(string[] args)
     {
+        if (args.Any(a => a is "-h" or "--help" or "-?" or "/?" or "?"))
+        {
+            PrintUsage();
+            return;
+        }
+        foreach (var a in args)
+        {
+            if (a.StartsWith("-") || a.StartsWith("/"))
+            {
+                Console.WriteLine($"Unknown option: {a}");
+                Console.WriteLine();
+                PrintUsage();
+                Environment.ExitCode = 1;
+                return;
+            }
+        }
+
         var configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json")

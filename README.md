@@ -51,6 +51,8 @@ cd AirtableSchemaReader
 dotnet run
 ```
 
+For the full list of options, run `dotnet run -- --help` (also accepts `-h`, `-?`, `/?`, `?`).
+
 ## Schema Overrides
 
 You can customize the output without modifying source code using `schema_overrides.json`.
