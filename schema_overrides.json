@@ -21,6 +21,16 @@
       "action": "exclude"
     },
     {
+      "table": "ARTWORK",
+      "field": "OLD_HUMAN_ID",
+      "action": "exclude"
+    },
+    {
+      "table": "ARTWORK",
+      "field": "OLD_HUMAN_ID_SORT",
+      "action": "exclude"
+    },
+    {
       "table": "ARTWORK_IMAGE",
       "field": "URL",
       "action": "setType",
