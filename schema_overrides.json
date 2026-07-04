@@ -35,6 +35,11 @@
       "field": "URL",
       "action": "setType",
       "value": "multilineText"
+    },
+    {
+      "table": "ARTWORK_IMAGE",
+      "field": "HUMAN_READABLE_ID (from ARTWORK_ID)",
+      "action": "exclude"
     }
   ]
 }
